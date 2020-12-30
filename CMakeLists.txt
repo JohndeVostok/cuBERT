@@ -22,13 +22,11 @@ if (OPENMP_FOUND)
     set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")
 endif()
 
-include(cub)
 include(utf8proc)
 include(protobuf-c)
 include(googletest)
 
 set(cuBERT_EXTERNAL_DEPENDENCIES
-        cub
         utf8proc
         protobuf-c
         googletest)
@@ -42,7 +40,6 @@ include_directories(
         src
         ${CMAKE_CURRENT_BINARY_DIR}
         # External dependencies.
-        ${cub_INCLUDE_DIR}
         ${protobuf-c_INCLUDE_DIRS}
         ${utf8proc_INCLUDE_DIRS})
 
